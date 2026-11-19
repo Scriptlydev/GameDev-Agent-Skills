@@ -28,7 +28,8 @@ See **[all 30 specifications](docs/SKILL_CATALOG.md)**, **[product requirements]
 
 - ✅ Product, architecture, 30 skill definitions, quality gates and governance documents prepared.
 - ⬜ Executable skill implementations, real application integrations and automated tests **not yet built**.
-- ⬜ CI workflows, compatibility matrix and public demos **not yet validated**.
+- ✅ Documentation-only GitHub Actions checks validated; these do **not** execute any game-engine skills.
+- ⬜ Game-engine integration CI, compatibility matrix and public runtime demos **not yet validated**.
 - ⬜ Community metrics or adoption: **none claimed**.
 
 ## Getting started as a developer
@@ -59,6 +60,6 @@ We do **not** imply endorsement or affiliation with Godot, Unity, Blender, Anthr
 
 ## Development and licensing
 
-Planned license: **MIT** for code and original docs (see [`LICENSE`](LICENSE)). Third-party code/assets require separate license review. Contributions welcome once initial implementation is published; please read [`CONTRIBUTING.md`](CONTRIBUTING.md).
+License: **MIT** for code and original docs (see [`LICENSE`](LICENSE)). Third-party code/assets require separate license review. Contributions welcome once initial implementation is published; please read [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 Maintainer: **Scriptlydev**. Project inception: 2026-11-19.

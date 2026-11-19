@@ -12,8 +12,10 @@
 | Godot 4.7+ MCP adapter | NOT TESTED | Candidate `hi-godot/godot-ai` |
 | Unity integration | NOT TESTED | Requires installed licensed Unity Editor |
 | Blender integration | NOT TESTED | Requires real Blender installation |
-| CI / security tests | NOT BUILT | Specs and acceptance gates documented |
-| Public repository / stars / installs | NOT VERIFIED | No claim of launch or usage |
+| Documentation CI | PASS on GitHub Actions | [Documentation checks](https://github.com/Scriptlydev/GameDev-Agent-Skills/actions/runs/44571795435); local validator and two unit tests |
+| Runtime skill / security tests | NOT BUILT | Specs and acceptance gates documented |
+| Public repository | VERIFIED | `Scriptlydev/GameDev-Agent-Skills`, MIT existing; docs imported and 14 issues created |
+| Actual skill adoption / downloads | NOT VERIFIED | No claim of users or installs |
 
 ## Known decisions
 
@@ -24,7 +26,7 @@
 
 ## Immediate next task
 
-Read `docs/FIRST_TASK_FOR_CLAUDE.md`; implement a smoke-tested CLI/headless scene analyzer on a disposable Godot 4.5.1 fixture, with machine-readable output. Do not mark it complete until evidence exists.
+Start from issue [#5](https://github.com/Scriptlydev/GameDev-Agent-Skills/issues/5) on `feat/g01-scene-doctor`. Read `docs/FIRST_TASK_FOR_CLAUDE.md`; implement a smoke-tested CLI/headless scene analyzer on a disposable Godot 4.5.1 fixture, with machine-readable output. Do not mark it complete until evidence exists.
 
 ## Blockers / unknowns
 

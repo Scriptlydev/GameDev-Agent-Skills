@@ -1,10 +1,18 @@
 # Handoff to the next agent
 
-**As of 2026-11-19:** full documentation set is created, **no working implementation**.
+**As of 2026-11-19:** docs pushed; initial Docs CI passed; 14 issues open; **no working skill implementation**.
 
 ## Before starting
 
 Read `../AGENTS.md`, `../STATE.md`, `../DECISIONS.md`, `PRD.md`, `ARCHITECTURE.md`, `QUALITY_GATE.md`, and `FIRST_TASK_FOR_CLAUDE.md`.
+
+## GitHub entry points
+
+- Public repo: https://github.com/Scriptlydev/GameDev-Agent-Skills
+- First branch: `feat/g01-scene-doctor`
+- First work item: https://github.com/Scriptlydev/GameDev-Agent-Skills/issues/5
+- Docs checks: https://github.com/Scriptlydev/GameDev-Agent-Skills/actions/runs/44571795435
+- Private planning is independent; do not mirror it without authorization.
 
 ## Exact first action
 
