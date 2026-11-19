@@ -23,3 +23,9 @@ Implement a small, fully verified vertical slice of **GameDev Agent Skills**, be
 - Next atomic task
 
 If unable to launch Godot, report it as **not tested**, not "working". Do not silently upgrade or reconfigure the owner's existing Godot installation.
+
+## Working with Codex without wasting quota
+
+Follow [`docs/QUOTA_AND_QUALITY.md`](docs/QUOTA_AND_QUALITY.md) as well as `docs/AGENT_WORKFLOW.md`. Default to **Claude as the scoped planner, architecture/security reviewer and final diff reviewer**, and **Codex CLI for bulk implementation, fixtures, unit tests and deterministic CI fixes**. Do not duplicate Codex's work or request full-repository dumps in chat; inspect focused diffs and test evidence. Give Codex an atomic issue, contract, allowed files and test criteria. Escalate only when a concrete failure or higher-risk decision requires deeper reasoning. Never skip native engine tests, security review or regression tests to save quota.
+
+When Codex is unavailable or blocked, Claude may implement in an isolated branch, recording that delegation decision. Agents must not alter each other's global configuration or unrelated projects.
