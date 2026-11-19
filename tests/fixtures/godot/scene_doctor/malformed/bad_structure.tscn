@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[node name="Root" type="Node"]
+
+[node name="SecondRoot" type="Node"]
+
+[node name="Orphan" type="Node" parent="DoesNotExist"]
+
+[node name="Child" type="Node" parent="."]
+
+[node name="Child" type="Node" parent="."]
+
+[connection signal="ready" from="Missing" to="." method="_noop"]

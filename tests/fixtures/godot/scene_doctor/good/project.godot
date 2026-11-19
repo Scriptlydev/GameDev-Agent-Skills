@@ -1,0 +1,7 @@
+; Synthetic fixture for G01 scene-doctor tests. No third-party assets.
+config_version=5
+
+[application]
+
+config/name="G01 Good Fixture"
+run/main_scene="res://main.tscn"

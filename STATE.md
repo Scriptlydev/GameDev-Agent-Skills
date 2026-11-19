@@ -1,19 +1,21 @@
 # STATE — verified project state
 
-**Last documented:** 2026-11-19 (Europe/Paris). **Overall state: DESIGN / NOT IMPLEMENTED.**
+**Last documented:** 2026-11-19 (Europe/Paris). **Overall state: DESIGN + first skill G01 IMPLEMENTED / UNVERIFIED, candidate for ALPHA VERIFIED (Linux, Godot 4.5.1) pending PR review.**
 
 | Area | Status | Evidence |
 |---|---|---|
 | Mission, PRD and architecture | Documented | Files in `docs/` |
 | 30 skill definitions | Documented | `docs/SKILL_CATALOG.md`, `docs/skills/` |
 | Agent Skills spec alignment | Requirements recorded; runtime validation pending | `docs/SKILL_FORMAT.md` |
-| Executable skills | NOT BUILT | No implementation claimed |
-| Godot 4.5.1 headless integration | NOT TESTED | Requires Godot binary and test project |
+| Executable skills | G01 `scene-doctor`: IMPLEMENTED / UNVERIFIED; 29 others NOT BUILT | `skills/godot/scene-doctor/`, [evidence](docs/evidence/G01-scene-doctor-evidence.md) |
+| Godot 4.5.1 headless integration | PASS on synthetic fixtures (Linux): `verified=true` on good and broken fixtures | Official checksum-verified build; [G01 evidence](docs/evidence/G01-scene-doctor-evidence.md) |
+| Godot 4.7.2 headless (untested-engine opt-in) | PASS on synthetic fixtures, `verified=false` by design | [G01 evidence](docs/evidence/G01-scene-doctor-evidence.md) |
 | Godot 4.7+ MCP adapter | NOT TESTED | Candidate `hi-godot/godot-ai` |
 | Unity integration | NOT TESTED | Requires installed licensed Unity Editor |
 | Blender integration | NOT TESTED | Requires real Blender installation |
 | Documentation CI | PASS on GitHub Actions | [Documentation checks](https://github.com/Scriptlydev/GameDev-Agent-Skills/actions/runs/44571795435); local validator and two unit tests |
-| Runtime skill / security tests | NOT BUILT | Specs and acceptance gates documented |
+| Runtime skill / security tests | G01: 43 unit tests (41 pass, 2 real-Godot tests skipped by default), and those 2 real-Godot tests pass on 4.5.1 and on 4.7.2 (opt-in) | `tests/test_scene_doctor.py` |
+| `skills-ref` external validator | PASS for G01 (skills-ref 0.1.1) | [G01 evidence](docs/evidence/G01-scene-doctor-evidence.md) |
 | Public repository | VERIFIED | `Scriptlydev/GameDev-Agent-Skills`, MIT existing; docs imported and 14 issues created |
 | Actual skill adoption / downloads | NOT VERIFIED | No claim of users or installs |
 
@@ -26,10 +28,12 @@
 
 ## Immediate next task
 
-Start from issue [#5](https://github.com/Scriptlydev/GameDev-Agent-Skills/issues/5) on `feat/g01-scene-doctor`. Read `docs/FIRST_TASK_FOR_CLAUDE.md`; implement a smoke-tested CLI/headless scene analyzer on a disposable Godot 4.5.1 fixture, with machine-readable output. Do not mark it complete until evidence exists.
+1. Review the G01 pull request (`feat/g01-scene-doctor` → `main`). Do not merge without review.
+2. After review, the reviewer decides whether to promote G01 to ALPHA VERIFIED (Linux + Godot 4.5.1). Evidence is recorded; the manifest status is still `implemented_unverified`.
+3. Next skill: per `docs/QUOTA_AND_QUALITY.md`, Claude writes the contract and Codex implements it (see ADR-008).
 
 ## Blockers / unknowns
 
-- Godot executable path, installed version, and fixture setup not verified in this documentation session.
+- Windows/macOS behaviour of G01 not tested.
 - Unity and Blender editor installations/versions have not been checked for this project.
 - No third-party code has been imported. Final package/dependency licenses require a per-release audit.

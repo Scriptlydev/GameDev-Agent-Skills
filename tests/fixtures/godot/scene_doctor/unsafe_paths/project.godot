@@ -1,0 +1,6 @@
+; Synthetic adversarial fixture for G01 scene-doctor tests. Nothing here must be executed.
+config_version=5
+
+[application]
+
+config/name="G01 Unsafe Paths Fixture"

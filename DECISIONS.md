@@ -31,6 +31,18 @@ MIT is intended for this project's original code/documentation. Before public pu
 
 External-facing docs describe functions and tests, not an exaggerated account of authorship. Do not fabricate individual contributions, hide mandated license notices, or misrepresent development methods where disclosure is required.
 
+## ADR-008 — G01 implemented by Claude Code (2026-11-19, accepted)
+
+`docs/QUOTA_AND_QUALITY.md` makes Codex the default implementer, with Claude reviewing. For G01 the maintainer explicitly asked Claude Code to implement and finish the skill in a single session, so Claude owned the whole G01 file scope (`skills/godot/scene-doctor/`, `tests/test_scene_doctor.py`, `tests/fixtures/godot/scene_doctor/`) and no second agent worked on the same task. This is a recorded one-time exception. From the next issue onward the default applies again: Claude writes the contract and acceptance criteria, Codex implements on an isolated branch, and Claude does one focused review of the diff and its evidence.
+
+## ADR-009 — G01 engine version policy (2026-11-19, accepted)
+
+The tested target set is `SUPPORTED_ENGINE_VERSIONS = ("4.5.1",)`. Any other Godot 4.x version is refused as `blocked` (G01-B003) unless the caller passes `--allow-untested-engine`. With that flag the native check runs, adds G01-W010, and the run is never reported as `verified`. Godot 3 and unparseable versions are refused (G01-B002). A 4.5.1 run has been recorded (2026-11-19: official checksum-verified Linux build, `verified=true` on the synthetic fixtures; see `docs/evidence/G01-scene-doctor-evidence.md`). G01 stays `implemented_unverified` in the manifest until a reviewer approves promotion to ALPHA VERIFIED.
+
+## ADR-010 — Meaning of `verified` in G01 reports (2026-11-19, accepted)
+
+`verified=true` means only this: the native check completed (DONE marker seen) on a tested engine version, and the before/after hash audit found no change to the project. It says nothing about the project being healthy, so a `fail` report can be `verified=true` when the engine confirmed the errors. Static-only, blocked, timed-out or untested-engine runs are always `verified=false`.
+
 ## Open decisions
 
 - Final public repository name and organization/owner (working name: `gamedev-agent-skills`).

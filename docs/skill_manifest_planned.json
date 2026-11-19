@@ -63,8 +63,9 @@
       "collection": "godot",
       "priority": "P0",
       "description": "Detect broken references and parse failures in Godot scenes",
-      "status": "specified_not_implemented",
-      "spec_path": "docs/skills/G01-scene-doctor.md"
+      "status": "implemented_unverified",
+      "spec_path": "docs/skills/G01-scene-doctor.md",
+      "implementation_path": "skills/godot/scene-doctor/SKILL.md"
     },
     {
       "id": "G02",

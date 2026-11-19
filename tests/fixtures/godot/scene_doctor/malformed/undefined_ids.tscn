@@ -1,0 +1,11 @@
+[gd_scene format=3]
+
+[sub_resource type="RectangleShape2D" id="shape_a"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource("shape_missing")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("9_undefined")

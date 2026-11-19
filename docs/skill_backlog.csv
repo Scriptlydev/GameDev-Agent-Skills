@@ -5,7 +5,7 @@ U03,dependency-auditor,universal,P2,SPECIFIED,"Audit version compatibility, lice
 U04,documentation-generator,universal,P2,SPECIFIED,Generate truthful operator docs from tested behaviors,docs/skills/U04-documentation-generator.md
 U05,multi-agent-handoff,universal,P0,SPECIFIED,Transfer exact project state between agents,docs/skills/U05-multi-agent-handoff.md
 U06,safe-change-rollback,universal,P0,SPECIFIED,"Guard file changes with preview, approval, snapshots and verified recovery",docs/skills/U06-safe-change-rollback.md
-G01,scene-doctor,godot,P0,SPECIFIED,Detect broken references and parse failures in Godot scenes,docs/skills/G01-scene-doctor.md
+G01,scene-doctor,godot,P0,IMPLEMENTED_UNVERIFIED,Detect broken references and parse failures in Godot scenes,docs/skills/G01-scene-doctor.md
 G02,script-debugger,godot,P1,SPECIFIED,Diagnose GDScript parse errors and suspicious script wiring,docs/skills/G02-script-debugger.md
 G03,collision-inspector,godot,P1,SPECIFIED,"Inspect collision shapes, layers and obvious physics mistakes",docs/skills/G03-collision-inspector.md
 G04,node-architect,godot,P2,SPECIFIED,Review node hierarchies and suggest maintainable structures,docs/skills/G04-node-architect.md
