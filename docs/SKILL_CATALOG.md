@@ -18,7 +18,7 @@
 | [G04](skills/G04-node-architect.md) | `node-architect` | Godot | P2 | Review node hierarchies and suggest maintainable structures | SPECIFIED |
 | [G05](skills/G05-asset-importer.md) | `asset-importer` | Godot | P2 | Verify imported GLB textures/materials and resource consistency | SPECIFIED |
 | [G06](skills/G06-performance-auditor.md) | `performance-auditor` | Godot | P2 | Collect reproducible scene and script performance evidence | SPECIFIED |
-| [G07](skills/G07-godot-test-runner.md) | `godot-test-runner` | Godot | P0 | Run selected Godot tests and summarize native results | SPECIFIED |
+| [G07](skills/G07-godot-test-runner.md) | `godot-test-runner` | Godot | P0 | Run selected Godot tests and summarize native results | [IMPLEMENTED / UNVERIFIED](../skills/godot/test-runner/SKILL.md) |
 | [G08](skills/G08-safe-scene-editor.md) | `safe-scene-editor` | Godot | P2 | Apply approved scene edits with verification and recovery | SPECIFIED |
 | [Y01](skills/Y01-csharp-code-doctor.md) | `csharp-code-doctor` | Unity | P2 | Diagnose Unity C# compile errors and API misuse | SPECIFIED |
 | [Y02](skills/Y02-scene-analyzer.md) | `scene-analyzer` | Unity | P2 | Analyze Unity scenes for broken references and configuration issues | SPECIFIED |

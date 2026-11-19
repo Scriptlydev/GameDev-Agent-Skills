@@ -118,8 +118,9 @@
       "collection": "godot",
       "priority": "P0",
       "description": "Run selected Godot tests and summarize native results",
-      "status": "specified_not_implemented",
-      "spec_path": "docs/skills/G07-godot-test-runner.md"
+      "status": "implemented_unverified",
+      "spec_path": "docs/skills/G07-godot-test-runner.md",
+      "implementation_path": "skills/godot/test-runner/SKILL.md"
     },
     {
       "id": "G08",

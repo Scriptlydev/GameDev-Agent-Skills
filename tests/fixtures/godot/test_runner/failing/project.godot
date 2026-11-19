@@ -1,0 +1,8 @@
+; Synthetic G07 fixture, no external assets.
+config_version=5
+
+[application]
+config/name="G07 failing"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"

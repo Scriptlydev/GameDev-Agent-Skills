@@ -89,7 +89,8 @@ Also report the exact command (paths redacted), the engine version and binary sh
 `verified=true` only when all of the following hold:
 - the run completed (DONE marker);
 - the engine version is a tested one (`4.5.1`);
-- the hash audit found no change.
+- the hash audit found no change;
+- at least one test was collected (`not_tested`, `blocked` and `error` are never verified).
 
 ## Safety invariants (must have tests)
 

@@ -11,7 +11,7 @@ G03,collision-inspector,godot,P1,SPECIFIED,"Inspect collision shapes, layers and
 G04,node-architect,godot,P2,SPECIFIED,Review node hierarchies and suggest maintainable structures,docs/skills/G04-node-architect.md
 G05,asset-importer,godot,P2,SPECIFIED,Verify imported GLB textures/materials and resource consistency,docs/skills/G05-asset-importer.md
 G06,performance-auditor,godot,P2,SPECIFIED,Collect reproducible scene and script performance evidence,docs/skills/G06-performance-auditor.md
-G07,godot-test-runner,godot,P0,SPECIFIED,Run selected Godot tests and summarize native results,docs/skills/G07-godot-test-runner.md
+G07,godot-test-runner,godot,P0,IMPLEMENTED_UNVERIFIED,Run selected Godot tests and summarize native results,docs/skills/G07-godot-test-runner.md
 G08,safe-scene-editor,godot,P2,SPECIFIED,Apply approved scene edits with verification and recovery,docs/skills/G08-safe-scene-editor.md
 Y01,csharp-code-doctor,unity,P2,SPECIFIED,Diagnose Unity C# compile errors and API misuse,docs/skills/Y01-csharp-code-doctor.md
 Y02,scene-analyzer,unity,P2,SPECIFIED,Analyze Unity scenes for broken references and configuration issues,docs/skills/Y02-scene-analyzer.md
