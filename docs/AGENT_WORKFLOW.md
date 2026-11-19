@@ -3,8 +3,9 @@
 ## Roles
 
 - **Coordinator / maintainer:** prioritize and approve scope; review evidence; decide publication. This is a human-governed role.
-- **Claude Code implementation agent:** writes small, isolated modules and integration scripts.
-- **Codex review / implementation agent:** tests independently, reviews logic and adds regressions on another branch.
+- **Claude Code coordinator / reviewer:** clarifies architecture, acceptance contracts, risky decisions and targeted reviews; implements when Codex is blocked or a specialized task requires it.
+- **Codex implementation / test agent:** performs the bulk of scoped coding, regression fixtures and deterministic test reproduction on isolated branches.
+- **Model routing:** choose the least costly available agent that can satisfy all quality gates; escalate for evidenced complexity, never skip tests to save quotas.
 - **Optional Gemini reviewer:** checks docs, tests and edge-case reasoning without receiving secrets/private content.
 - **Release reviewer:** verifies licenses, security and native-editor evidence before merge.
 
@@ -34,4 +35,10 @@ A coordinator may not label `VERIFIED` without an actual test report and version
 
 ## Cost and quota controls
 
-Use bounded tasks, narrow context, repo file searches before full-file reads, deterministic unit tests before LLM reviews and no repeated long agent loops without new evidence. Existing free/paid quotas are not unlimited; monitor and log costs only when actually measurable.
+Follow [the quota/quality operating procedure](QUOTA_AND_QUALITY.md) for model routing, task packets, staged reading, evidence handoff, deterministic tests, targeted review and escalation.
+
+- Default to **Claude planning/review + Codex implementation/tests** for meaningful changes, but skip the second agent for truly trivial tasks.
+- Keep quality gates, real engine verification and safe rollback unchanged even when quotas are exhausted.
+- One task owner; separate worktrees; share concise PR diffs and evidence paths instead of full conversations.
+- Abort repeated attempts without new diagnostic evidence; checkpoint work rather than continuing token-heavy loops.
+- Log costs only if measurable and never assume subscription quota/pricing.

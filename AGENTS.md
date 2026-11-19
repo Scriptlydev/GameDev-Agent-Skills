@@ -34,3 +34,7 @@ Read `STATE.md`, `DECISIONS.md`, `docs/ARCHITECTURE.md`, `docs/QUALITY_GATE.md`,
 ## Closing a task
 
 Record files changed, commands run, test outcomes, untested assumptions, risks, and next steps in `docs/JOURNAL.md`; update `STATE.md` and `docs/HANDOFF.md`; create/update a PR. Never self-approve or self-merge an unreviewed high-risk change.
+
+## Efficient collaboration, unchanged quality standard
+
+All agents must follow [`docs/QUOTA_AND_QUALITY.md`](docs/QUOTA_AND_QUALITY.md): default Claude coordination / targeted review, Codex bulk implementation / tests, and deterministic local + CI verification. Do not duplicate unsplit work or share full chat transcripts. These are cost controls only; `docs/QUALITY_GATE.md`, human approval for risky operations and truthful test reporting always take precedence.
