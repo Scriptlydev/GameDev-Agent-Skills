@@ -44,3 +44,12 @@ Use append-only dated entries. Do **not** overwrite or reinterpret older test ev
 - Evidence and results:
 - Blockers and security notes:
 - Next action:
+
+## 2026-11-19 — G07 test-runner implemented (unverified)
+
+- Agent/operator and branch: Codex implementation (devhub task 24), Claude review; `feat/g07-test-runner`, stacked on `feat/g01-scene-doctor`.
+- Files changed: `skills/godot/test-runner/` (SKILL.md, scripts/test_runner.py, scripts/g07_runner.gd, references/DIAGNOSTICS.md); `tests/test_test_runner.py`; `tests/fixtures/godot/test_runner/` (8 synthetic fixtures); G07 rows in manifest, catalog and backlog; `docs/evidence/G07-test-runner-evidence.md`; contract and ADR-011 from the earlier commit.
+- Commands/tests executed: full suite with `GODOT_BIN` set to Godot 4.5.1, 69 tests OK (no skips); `RealGodotTests` for G07, 2 OK; a 9-case native CLI matrix; `verify_docs.py` PASS; `git diff --check` clean.
+- Review finding fixed by the reviewer: an `empty` run reported `not_tested` with `verified=true`. `not_tested`, `blocked` and `error` are now never verified, and the test asserts it.
+- Not tested: Windows, macOS, GUT, gdUnit4, C#, real projects.
+- Next: G01 PR review, then the G07 PR.

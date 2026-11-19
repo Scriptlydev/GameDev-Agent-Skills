@@ -1,6 +1,6 @@
 # Handoff to the next agent
 
-**As of 2026-11-19:** G01 `scene-doctor` is IMPLEMENTED / UNVERIFIED on `feat/g01-scene-doctor` and its PR awaits review. No skill is verified or stable.
+**As of 2026-11-19:** G01 `scene-doctor` is IMPLEMENTED / UNVERIFIED on `feat/g01-scene-doctor` and its PR awaits review. G07 `test-runner` is IMPLEMENTED / UNVERIFIED on `feat/g07-test-runner`, which is stacked on G01. No skill is verified or stable.
 
 ## Before starting
 
@@ -26,6 +26,14 @@ Read `../AGENTS.md`, `../STATE.md`, `../DECISIONS.md`, `PRD.md`, `ARCHITECTURE.m
   1. Reviewer: review the PR diff and evidence.
   2. Reviewer: decide whether to promote G01 to ALPHA VERIFIED (Linux + 4.5.1) after review.
   3. Next skill: Claude writes the issue contract; Codex implements on an isolated branch (ADR-008).
+
+## Current handoff (G07)
+
+- Branch: `feat/g07-test-runner` (stacked on `feat/g01-scene-doctor`; not merged). Contract: `docs/contracts/G07-godot-test-runner.md`, ADR-011.
+- Implemented by Codex, reviewed by Claude. Reviewer fix: `not_tested`, `blocked` and `error` runs are never `verified`.
+- Tests: 69 OK with Godot 4.5.1 (no skips); native 9-case matrix in `docs/evidence/G07-test-runner-evidence.md`.
+- Limits: Windows/macOS not tested; GUT, gdUnit4 and C# tests not supported; the disposable copy is not an OS sandbox.
+- Next: open the G07 PR after G01 is merged.
 
 ## Exact first action for G01 follow-up
 
