@@ -43,6 +43,10 @@ The tested target set is `SUPPORTED_ENGINE_VERSIONS = ("4.5.1",)`. Any other God
 
 `verified=true` means only this: the native check completed (DONE marker seen) on a tested engine version, and the before/after hash audit found no change to the project. It says nothing about the project being healthy, so a `fail` report can be `verified=true` when the engine confirmed the errors. Static-only, blocked, timed-out or untested-engine runs are always `verified=false`.
 
+## ADR-011 — G07 test convention and ownership (2026-11-19, accepted)
+
+G07 v0.1 runs only its own built-in GDScript test convention, described in `docs/contracts/G07-godot-test-runner.md`. GUT and gdUnit4 adapters are out of scope until later issues. A test method passes only when it returns `null`. A returned `String` is a failure, unless it starts with `SKIP:`, in which case the test counts as skipped. A skipped test is never counted as passed. Engine crashes, parse errors, a missing DONE marker and timeouts are reported as their own diagnostics and never as test results. G07 reuses G01's version policy (ADR-009) and the meaning of `verified` (ADR-010). Code is copied into the G07 package rather than imported from G01, so that each skill stays self-contained. Codex implements G07 (ADR-008) and Claude Code reviews it.
+
 ## Open decisions
 
 - Final public repository name and organization/owner (working name: `gamedev-agent-skills`).
