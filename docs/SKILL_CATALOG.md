@@ -1,6 +1,6 @@
 # Catalogue — 30 planned skills
 
-**Important:** all 30 entries are **specifications**, not operational tools. Each linked document contains behavior, integration approach, tests and risk controls. Implementation must be proven separately.
+**Important:** 29 entries are **specifications** only. G01 has a first implementation ([skills/godot/scene-doctor](../skills/godot/scene-doctor/SKILL.md)) that is **IMPLEMENTED / UNVERIFIED**: native evidence exists only on an untested Godot version, not on the 4.5.1 target. None is stable. Each linked document contains behavior, integration approach, tests and risk controls. Implementation must be proven separately.
 
 ## Catalog
 
@@ -12,7 +12,7 @@
 | [U04](skills/U04-documentation-generator.md) | `documentation-generator` | Universal | P2 | Generate truthful operator docs from tested behaviors | SPECIFIED |
 | [U05](skills/U05-multi-agent-handoff.md) | `multi-agent-handoff` | Universal | P0 | Transfer exact project state between agents | SPECIFIED |
 | [U06](skills/U06-safe-change-rollback.md) | `safe-change-rollback` | Universal | P0 | Guard file changes with preview, approval, snapshots and verified recovery | SPECIFIED |
-| [G01](skills/G01-scene-doctor.md) | `scene-doctor` | Godot | P0 | Detect broken references and parse failures in Godot scenes | SPECIFIED |
+| [G01](skills/G01-scene-doctor.md) | `scene-doctor` | Godot | P0 | Detect broken references and parse failures in Godot scenes | IMPLEMENTED / UNVERIFIED |
 | [G02](skills/G02-script-debugger.md) | `script-debugger` | Godot | P1 | Diagnose GDScript parse errors and suspicious script wiring | SPECIFIED |
 | [G03](skills/G03-collision-inspector.md) | `collision-inspector` | Godot | P1 | Inspect collision shapes, layers and obvious physics mistakes | SPECIFIED |
 | [G04](skills/G04-node-architect.md) | `node-architect` | Godot | P2 | Review node hierarchies and suggest maintainable structures | SPECIFIED |

@@ -42,7 +42,13 @@ def check_manifest(root: Path = ROOT) -> list[str]:
             errors.append(f'Unsafe spec path: {rel}')
         elif not (root / rel).is_file():
             errors.append(f'Missing specification: {rel}')
-        if item.get('status') != 'specified_not_implemented':
+        status = item.get('status')
+        if status == 'implemented_unverified':
+            impl = item.get('implementation_path', '')
+            if not impl or Path(impl).is_absolute() or '..' in Path(impl).parts or not (root / impl).is_file():
+                errors.append(f'Implemented skill {item.get("id")} lacks a valid implementation_path')
+        elif status != 'specified_not_implemented':
+            # 'verified'/'stable' need native evidence on the target engine; not accepted by this check yet.
             errors.append(f'Unexpected implementation status for {item.get("id")}')
     return errors
 
@@ -75,7 +81,7 @@ def main() -> int:
     if errors:
         print(f'{len(errors)} documentation issue(s) found.', file=sys.stderr)
         return 1
-    print('PASS: manifest and local documentation links validated. Executable skills remain untested.')
+    print('PASS: manifest and local documentation links validated. No skill is marked verified or stable.')
     return 0
 
 

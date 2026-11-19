@@ -18,6 +18,15 @@ Use append-only dated entries. Do **not** overwrite or reinterpret older test ev
 - No executable skills or game-engine integrations tested yet.
 - Next: implement G01 with synthetic fixtures, real Godot CLI evidence and a reviewed PR.
 
+## 2026-11-19 — G01 scene-doctor implemented (unverified)
+
+- Agent/operator and branch: Claude Code, `feat/g01-scene-doctor` (ADR-008: one-time exception to the default "Codex implements").
+- Files changed: `skills/godot/scene-doctor/` (SKILL.md, scripts/scene_doctor.py, scripts/godot_check_scenes.gd, references/DIAGNOSTICS.md); `tests/test_scene_doctor.py`; `tests/fixtures/godot/scene_doctor/` (5 synthetic fixtures); manifest, catalog and backlog status set to implemented_unverified; `scripts/verify_docs.py` accepts implemented_unverified when implementation_path exists; DECISIONS ADR-008–010; `docs/evidence/G01-scene-doctor-evidence.md`.
+- Commands/tests executed: `python3 -m unittest discover -s tests` (43 run, OK, 2 skipped); `RealGodotTests` with Godot 4.7.2 and the untested-engine opt-in (2 OK); `python3 scripts/verify_docs.py` (PASS); a 20-run CLI matrix over the fixtures.
+- Evidence and results: see the evidence file. Statuses and exit codes match SKILL.md. The fixture hashes were unchanged after all runs, and no report is `verified=true`.
+- Blockers and security notes: Godot 4.5.1 NOT TESTED (binary not available); `skills-ref` SKIPPED (install not authorized). The tool is read-only: the engine runs only on a disposable copy, symlinks and unsafe paths are refused, and paths are redacted.
+- Next action: PR review; a 4.5.1 run; the next skill implemented by Codex under a Claude-written contract.
+
 ### New entry template
 
 #### YYYY-MM-DD — short description
