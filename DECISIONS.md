@@ -37,7 +37,7 @@ External-facing docs describe functions and tests, not an exaggerated account of
 
 ## ADR-009 — G01 engine version policy (2026-11-19, accepted)
 
-The tested target set is `SUPPORTED_ENGINE_VERSIONS = ("4.5.1",)`. Any other Godot 4.x version is refused as `blocked` (G01-B003) unless the caller passes `--allow-untested-engine`. With that flag the native check runs, adds G01-W010, and the run is never reported as `verified`. Godot 3 and unparseable versions are refused (G01-B002). The only native evidence so far comes from 4.7.2 behind this flag, so G01 stays `implemented_unverified` until a 4.5.1 run is recorded.
+The tested target set is `SUPPORTED_ENGINE_VERSIONS = ("4.5.1",)`. Any other Godot 4.x version is refused as `blocked` (G01-B003) unless the caller passes `--allow-untested-engine`. With that flag the native check runs, adds G01-W010, and the run is never reported as `verified`. Godot 3 and unparseable versions are refused (G01-B002). A 4.5.1 run has been recorded (2026-11-19: official checksum-verified Linux build, `verified=true` on the synthetic fixtures; see `docs/evidence/G01-scene-doctor-evidence.md`). G01 stays `implemented_unverified` in the manifest until a reviewer approves promotion to ALPHA VERIFIED.
 
 ## ADR-010 — Meaning of `verified` in G01 reports (2026-11-19, accepted)
 

@@ -1,8 +1,9 @@
 # G01 scene-doctor — evidence (2026-11-19)
 
-**Status: IMPLEMENTED / UNVERIFIED.** The native check was executed only on an
-*untested* Godot version (4.7.2). The release target Godot 4.5.1 is **NOT TESTED**.
-No run in this file reports `verified=true`.
+**Status: IMPLEMENTED / UNVERIFIED, candidate for ALPHA VERIFIED (Linux, Godot 4.5.1)
+pending PR review.** The native check passed on the pinned target Godot 4.5.1
+(official build, checksum verified) and also on 4.7.2 behind the untested-engine opt-in.
+Windows and macOS are not tested.
 
 Paths are redacted: `<repo>` = repository checkout, `<scratch>` = disposable
 directory outside the repository, `<godot>` = Godot executable.
@@ -13,9 +14,8 @@ directory outside the repository, `<godot>` = Godot executable.
 |---|---|
 | OS | Linux 6.1 (Debian, x86_64, headless server) |
 | Python | 3.11.2 (stdlib only, run with `-I`) |
-| Godot executable | `Godot_v4.7.2-stable_linux.x86_64`, `--version` = `4.7.2.stable.official.ed1daf0bf` |
-| Godot binary sha256 | `8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e` |
-| Godot 4.5.1 | **NOT TESTED** — binary not available in this session (download not authorized) |
+| Godot 4.5.1 (target) | Official `Godot_v4.5.1-stable_linux.x86_64.zip` from the godotengine/godot `4.5.1-stable` release; zip matches the release `SHA512-SUMS.txt`; `--version` = `4.5.1.stable.official.f62fdbde1`; binary sha256 `db07cae7de644278a1884d4552bdf2bca3f5d30131b18faf3a0c4d730080b199` |
+| Godot 4.7.2 (untested) | `--version` = `4.7.2.stable.official.ed1daf0bf`; binary sha256 `8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e` |
 | Fixtures | Synthetic only, `tests/fixtures/godot/scene_doctor/` (no private game files) |
 
 ## Automated tests
@@ -23,8 +23,12 @@ directory outside the repository, `<godot>` = Godot executable.
 ```text
 python3 -m unittest discover -s tests -v
   -> Ran 43 tests: OK (skipped=2)   # the 2 skips are the real-Godot tests
-GODOT_BIN=<godot> G01_ALLOW_UNTESTED=1 python3 -m unittest tests.test_scene_doctor.RealGodotTests -v
+GODOT_BIN=<godot-4.5.1> python3 -m unittest tests.test_scene_doctor.RealGodotTests -v
+  -> Ran 2 tests: OK (about 26 s)
+GODOT_BIN=<godot-4.7.2> G01_ALLOW_UNTESTED=1 python3 -m unittest tests.test_scene_doctor.RealGodotTests -v
   -> Ran 2 tests: OK (about 28 s)
+agentskills validate skills/godot/scene-doctor      # skills-ref 0.1.1, throwaway venv
+  -> Valid skill: skills/godot/scene-doctor (exit 0)
 python3 scripts/verify_docs.py
   -> PASS: manifest and local documentation links validated. No skill is marked verified or stable.
 ```
@@ -36,12 +40,27 @@ an engine that writes into the workspace. They also cover refusals R001–R004,
 symlink escape, case mismatch, stale UID, `.gdignore`, binary or oversized
 files, and the fixture write audit.
 
-The external `skills-ref` validator was **SKIPPED**: its installation was not
-authorized in this session. `SkillPackageTests` checks the frontmatter rules
-(name, description length, license, compatibility) and that every code is
-documented. This is a partial substitute only.
+The external `skills-ref` validator (0.1.1) was run in a throwaway virtual
+environment outside the repository and reported the skill valid. `SkillPackageTests`
+checks the same frontmatter rules in CI.
 
-## CLI matrix on fixtures
+## Native check on Godot 4.5.1 (pinned target)
+
+`python3 -I skills/godot/scene-doctor/scripts/scene_doctor.py inspect <fixture> --godot <godot-4.5.1> --report <scratch>/r.json --evidence-dir <scratch>/logs`
+
+| Fixture | Exit | status | verified | native | Codes (findings / errors) |
+|---|---|---|---|---|---|
+| good | 0 | pass | **true** | ok | — |
+| broken_texture | 1 | fail | true | ok | E002, E021 |
+| missing_script | 1 | fail | true | ok | E003, E021 |
+| malformed | 1 | fail | true | ok | E001, E005, E006, E007, E011, E013, E020, E021, W002 |
+| unsafe_paths | 1 | fail | false | unsafe | E004, I001 / B004 (engine not run) |
+
+On the `fail` rows, `verified=true` means the engine confirmed the errors natively
+(ADR-010). The fixture hashes were identical before and after these 5 runs, and
+the reports and logs contain no home or project paths.
+
+## CLI matrix on fixtures (static, no engine, 4.7.2)
 
 Command shape (`<mode>` below):
 
@@ -87,7 +106,6 @@ required fields of `docs/REPORT_SCHEMA.md` 0.1.0 (none missing); the suite asser
 
 ## Not demonstrated
 
-- Godot 4.5.1 (the release target): NOT TESTED.
 - Windows and macOS: NOT TESTED.
 - Real-world projects: NOT TESTED (synthetic fixtures only, by design).
 - Instanced sub-scene contents, binary `.scn`/`.res` and UID-only references

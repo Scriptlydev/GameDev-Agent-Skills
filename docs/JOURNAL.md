@@ -27,6 +27,14 @@ Use append-only dated entries. Do **not** overwrite or reinterpret older test ev
 - Blockers and security notes: Godot 4.5.1 NOT TESTED (binary not available); `skills-ref` SKIPPED (install not authorized). The tool is read-only: the engine runs only on a disposable copy, symlinks and unsafe paths are refused, and paths are redacted.
 - Next action: PR review; a 4.5.1 run; the next skill implemented by Codex under a Claude-written contract.
 
+## 2026-11-19 — G01 native check on Godot 4.5.1
+
+- Agent/operator and branch: Claude Code, `feat/g01-scene-doctor`.
+- Commands/tests executed: downloaded the official Godot 4.5.1 Linux build (zip checked against the release SHA512-SUMS); ran `RealGodotTests` (2 OK) and the 5-fixture CLI matrix on 4.5.1; ran `agentskills validate` (skills-ref 0.1.1) in a throwaway venv (valid).
+- Evidence and results: good fixture gives `pass` with `verified=true`; broken fixtures give `fail` with `verified=true`; unsafe_paths is refused natively (B004). Fixture hashes were unchanged.
+- Blockers and security notes: none. Windows and macOS not tested.
+- Next action: PR review, then a decision on promoting G01 to ALPHA VERIFIED.
+
 ### New entry template
 
 #### YYYY-MM-DD — short description

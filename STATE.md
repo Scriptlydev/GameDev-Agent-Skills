@@ -1,6 +1,6 @@
 # STATE — verified project state
 
-**Last documented:** 2026-11-19 (Europe/Paris). **Overall state: DESIGN + first skill G01 IMPLEMENTED / UNVERIFIED (PR pending review).**
+**Last documented:** 2026-11-19 (Europe/Paris). **Overall state: DESIGN + first skill G01 IMPLEMENTED / UNVERIFIED, candidate for ALPHA VERIFIED (Linux, Godot 4.5.1) pending PR review.**
 
 | Area | Status | Evidence |
 |---|---|---|
@@ -8,14 +8,14 @@
 | 30 skill definitions | Documented | `docs/SKILL_CATALOG.md`, `docs/skills/` |
 | Agent Skills spec alignment | Requirements recorded; runtime validation pending | `docs/SKILL_FORMAT.md` |
 | Executable skills | G01 `scene-doctor`: IMPLEMENTED / UNVERIFIED; 29 others NOT BUILT | `skills/godot/scene-doctor/`, [evidence](docs/evidence/G01-scene-doctor-evidence.md) |
-| Godot 4.5.1 headless integration | NOT TESTED | 4.5.1 binary not available in the G01 session; target version unproven |
+| Godot 4.5.1 headless integration | PASS on synthetic fixtures (Linux): `verified=true` on good and broken fixtures | Official checksum-verified build; [G01 evidence](docs/evidence/G01-scene-doctor-evidence.md) |
 | Godot 4.7.2 headless (untested-engine opt-in) | PASS on synthetic fixtures, `verified=false` by design | [G01 evidence](docs/evidence/G01-scene-doctor-evidence.md) |
 | Godot 4.7+ MCP adapter | NOT TESTED | Candidate `hi-godot/godot-ai` |
 | Unity integration | NOT TESTED | Requires installed licensed Unity Editor |
 | Blender integration | NOT TESTED | Requires real Blender installation |
 | Documentation CI | PASS on GitHub Actions | [Documentation checks](https://github.com/Scriptlydev/GameDev-Agent-Skills/actions/runs/44571795435); local validator and two unit tests |
-| Runtime skill / security tests | G01: 43 unit tests (41 pass, 2 real-Godot tests skipped by default), and those 2 real-Godot tests pass on 4.7.2 | `tests/test_scene_doctor.py` |
-| `skills-ref` external validator | SKIPPED | Install not authorized; the in-repo frontmatter test is a partial substitute |
+| Runtime skill / security tests | G01: 43 unit tests (41 pass, 2 real-Godot tests skipped by default), and those 2 real-Godot tests pass on 4.5.1 and on 4.7.2 (opt-in) | `tests/test_scene_doctor.py` |
+| `skills-ref` external validator | PASS for G01 (skills-ref 0.1.1) | [G01 evidence](docs/evidence/G01-scene-doctor-evidence.md) |
 | Public repository | VERIFIED | `Scriptlydev/GameDev-Agent-Skills`, MIT existing; docs imported and 14 issues created |
 | Actual skill adoption / downloads | NOT VERIFIED | No claim of users or installs |
 
@@ -29,13 +29,11 @@
 ## Immediate next task
 
 1. Review the G01 pull request (`feat/g01-scene-doctor` → `main`). Do not merge without review.
-2. Run the 4.5.1 native check: `GODOT_BIN=<godot-4.5.1> python3 -m unittest tests.test_scene_doctor.RealGodotTests -v`, plus the CLI matrix in the evidence file. Record the results there. Only then can G01 move beyond `implemented_unverified`.
+2. After review, the reviewer decides whether to promote G01 to ALPHA VERIFIED (Linux + Godot 4.5.1). Evidence is recorded; the manifest status is still `implemented_unverified`.
 3. Next skill: per `docs/QUOTA_AND_QUALITY.md`, Claude writes the contract and Codex implements it (see ADR-008).
 
 ## Blockers / unknowns
 
-- Godot 4.5.1 binary not available to the agent session; only 4.7.2 was tested (behind `--allow-untested-engine`).
-- `skills-ref` validator not run (install not authorized).
 - Windows/macOS behaviour of G01 not tested.
 - Unity and Blender editor installations/versions have not been checked for this project.
 - No third-party code has been imported. Final package/dependency licenses require a per-release audit.

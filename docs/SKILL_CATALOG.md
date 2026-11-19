@@ -1,6 +1,6 @@
 # Catalogue — 30 planned skills
 
-**Important:** 29 entries are **specifications** only. G01 has a first implementation ([skills/godot/scene-doctor](../skills/godot/scene-doctor/SKILL.md)) that is **IMPLEMENTED / UNVERIFIED**: native evidence exists only on an untested Godot version, not on the 4.5.1 target. None is stable. Each linked document contains behavior, integration approach, tests and risk controls. Implementation must be proven separately.
+**Important:** 29 entries are **specifications** only. G01 has a first implementation ([skills/godot/scene-doctor](../skills/godot/scene-doctor/SKILL.md)) that is **IMPLEMENTED / UNVERIFIED**: native evidence on the Godot 4.5.1 target (Linux, synthetic fixtures) is recorded and pending review for ALPHA VERIFIED. None is stable. Each linked document contains behavior, integration approach, tests and risk controls. Implementation must be proven separately.
 
 ## Catalog
 
