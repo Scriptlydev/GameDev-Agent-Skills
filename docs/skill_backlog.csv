@@ -1,0 +1,31 @@
+id,name,collection,priority,status,description,spec_path
+U01,project-architect,universal,P1,SPECIFIED,Map project structure and propose a bounded task plan,docs/skills/U01-project-architect.md
+U02,code-reviewer,universal,P1,SPECIFIED,Review scoped diffs for correctness and regression risks,docs/skills/U02-code-reviewer.md
+U03,dependency-auditor,universal,P2,SPECIFIED,"Audit version compatibility, licenses and supply-chain exposure",docs/skills/U03-dependency-auditor.md
+U04,documentation-generator,universal,P2,SPECIFIED,Generate truthful operator docs from tested behaviors,docs/skills/U04-documentation-generator.md
+U05,multi-agent-handoff,universal,P0,SPECIFIED,Transfer exact project state between agents,docs/skills/U05-multi-agent-handoff.md
+U06,safe-change-rollback,universal,P0,SPECIFIED,"Guard file changes with preview, approval, snapshots and verified recovery",docs/skills/U06-safe-change-rollback.md
+G01,scene-doctor,godot,P0,SPECIFIED,Detect broken references and parse failures in Godot scenes,docs/skills/G01-scene-doctor.md
+G02,script-debugger,godot,P1,SPECIFIED,Diagnose GDScript parse errors and suspicious script wiring,docs/skills/G02-script-debugger.md
+G03,collision-inspector,godot,P1,SPECIFIED,"Inspect collision shapes, layers and obvious physics mistakes",docs/skills/G03-collision-inspector.md
+G04,node-architect,godot,P2,SPECIFIED,Review node hierarchies and suggest maintainable structures,docs/skills/G04-node-architect.md
+G05,asset-importer,godot,P2,SPECIFIED,Verify imported GLB textures/materials and resource consistency,docs/skills/G05-asset-importer.md
+G06,performance-auditor,godot,P2,SPECIFIED,Collect reproducible scene and script performance evidence,docs/skills/G06-performance-auditor.md
+G07,godot-test-runner,godot,P0,SPECIFIED,Run selected Godot tests and summarize native results,docs/skills/G07-godot-test-runner.md
+G08,safe-scene-editor,godot,P2,SPECIFIED,Apply approved scene edits with verification and recovery,docs/skills/G08-safe-scene-editor.md
+Y01,csharp-code-doctor,unity,P2,SPECIFIED,Diagnose Unity C# compile errors and API misuse,docs/skills/Y01-csharp-code-doctor.md
+Y02,scene-analyzer,unity,P2,SPECIFIED,Analyze Unity scenes for broken references and configuration issues,docs/skills/Y02-scene-analyzer.md
+Y03,prefab-inspector,unity,P2,SPECIFIED,"Validate prefab connections, overrides and missing assets",docs/skills/Y03-prefab-inspector.md
+Y04,physics-debugger,unity,P2,SPECIFIED,Detect suspicious collider/rigidbody layer configurations,docs/skills/Y04-physics-debugger.md
+Y05,asset-import-optimizer,unity,P2,SPECIFIED,Inspect asset import size/format and suggest targeted optimizations,docs/skills/Y05-asset-import-optimizer.md
+Y06,performance-profiler,unity,P2,SPECIFIED,Summarize measurable editor/player performance traces,docs/skills/Y06-performance-profiler.md
+Y07,unity-test-runner,unity,P2,SPECIFIED,Execute Unity Edit Mode/Play Mode tests reliably,docs/skills/Y07-unity-test-runner.md
+Y08,build-validator,unity,P2,SPECIFIED,Validate project build prerequisites and packaging,docs/skills/Y08-build-validator.md
+B01,mesh-doctor,blender,P1,SPECIFIED,"Inspect mesh topology, normals and geometry defects",docs/skills/B01-mesh-doctor.md
+B02,topology-analyzer,blender,P2,SPECIFIED,Evaluate topology suitability for game assets,docs/skills/B02-topology-analyzer.md
+B03,uv-inspector,blender,P2,SPECIFIED,"Audit UV presence, overlap and bounds",docs/skills/B03-uv-inspector.md
+B04,material-auditor,blender,P2,SPECIFIED,"Detect missing textures, invalid nodes and export risks",docs/skills/B04-material-auditor.md
+B05,rig-validator,blender,P1,SPECIFIED,"Verify armatures, weights and deform chains for game export",docs/skills/B05-rig-validator.md
+B06,animation-checker,blender,P2,SPECIFIED,Review action/NLA keyframe and rig compatibility,docs/skills/B06-animation-checker.md
+B07,game-asset-optimizer,blender,P2,SPECIFIED,Plan controlled poly/texture optimization and compare quality,docs/skills/B07-game-asset-optimizer.md
+B08,batch-exporter,blender,P1,SPECIFIED,Export multiple assets with consistent naming and validation,docs/skills/B08-batch-exporter.md

@@ -1,0 +1,30 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+# editor-generated state (fixture-specific ignore rules may differ)
+.godot/
+Library/
+Temp/
+Obj/
+Logs/
+UserSettings/
+# generated/private evidence and backups
+reports/
+local-reports/
+.scratch/
+.local/
+.backups/
+*.log
+.DS_Store
+Thumbs.db

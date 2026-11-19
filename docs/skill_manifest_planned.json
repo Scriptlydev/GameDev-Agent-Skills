@@ -1,0 +1,277 @@
+{
+  "schema_version": "0.1.0",
+  "as_of": "2026-11-19",
+  "status": "specification_only",
+  "skills": [
+    {
+      "id": "U01",
+      "name": "project-architect",
+      "collection": "universal",
+      "priority": "P1",
+      "description": "Map project structure and propose a bounded task plan",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/U01-project-architect.md"
+    },
+    {
+      "id": "U02",
+      "name": "code-reviewer",
+      "collection": "universal",
+      "priority": "P1",
+      "description": "Review scoped diffs for correctness and regression risks",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/U02-code-reviewer.md"
+    },
+    {
+      "id": "U03",
+      "name": "dependency-auditor",
+      "collection": "universal",
+      "priority": "P2",
+      "description": "Audit version compatibility, licenses and supply-chain exposure",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/U03-dependency-auditor.md"
+    },
+    {
+      "id": "U04",
+      "name": "documentation-generator",
+      "collection": "universal",
+      "priority": "P2",
+      "description": "Generate truthful operator docs from tested behaviors",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/U04-documentation-generator.md"
+    },
+    {
+      "id": "U05",
+      "name": "multi-agent-handoff",
+      "collection": "universal",
+      "priority": "P0",
+      "description": "Transfer exact project state between agents",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/U05-multi-agent-handoff.md"
+    },
+    {
+      "id": "U06",
+      "name": "safe-change-rollback",
+      "collection": "universal",
+      "priority": "P0",
+      "description": "Guard file changes with preview, approval, snapshots and verified recovery",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/U06-safe-change-rollback.md"
+    },
+    {
+      "id": "G01",
+      "name": "scene-doctor",
+      "collection": "godot",
+      "priority": "P0",
+      "description": "Detect broken references and parse failures in Godot scenes",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/G01-scene-doctor.md"
+    },
+    {
+      "id": "G02",
+      "name": "script-debugger",
+      "collection": "godot",
+      "priority": "P1",
+      "description": "Diagnose GDScript parse errors and suspicious script wiring",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/G02-script-debugger.md"
+    },
+    {
+      "id": "G03",
+      "name": "collision-inspector",
+      "collection": "godot",
+      "priority": "P1",
+      "description": "Inspect collision shapes, layers and obvious physics mistakes",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/G03-collision-inspector.md"
+    },
+    {
+      "id": "G04",
+      "name": "node-architect",
+      "collection": "godot",
+      "priority": "P2",
+      "description": "Review node hierarchies and suggest maintainable structures",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/G04-node-architect.md"
+    },
+    {
+      "id": "G05",
+      "name": "asset-importer",
+      "collection": "godot",
+      "priority": "P2",
+      "description": "Verify imported GLB textures/materials and resource consistency",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/G05-asset-importer.md"
+    },
+    {
+      "id": "G06",
+      "name": "performance-auditor",
+      "collection": "godot",
+      "priority": "P2",
+      "description": "Collect reproducible scene and script performance evidence",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/G06-performance-auditor.md"
+    },
+    {
+      "id": "G07",
+      "name": "godot-test-runner",
+      "collection": "godot",
+      "priority": "P0",
+      "description": "Run selected Godot tests and summarize native results",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/G07-godot-test-runner.md"
+    },
+    {
+      "id": "G08",
+      "name": "safe-scene-editor",
+      "collection": "godot",
+      "priority": "P2",
+      "description": "Apply approved scene edits with verification and recovery",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/G08-safe-scene-editor.md"
+    },
+    {
+      "id": "Y01",
+      "name": "csharp-code-doctor",
+      "collection": "unity",
+      "priority": "P2",
+      "description": "Diagnose Unity C# compile errors and API misuse",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/Y01-csharp-code-doctor.md"
+    },
+    {
+      "id": "Y02",
+      "name": "scene-analyzer",
+      "collection": "unity",
+      "priority": "P2",
+      "description": "Analyze Unity scenes for broken references and configuration issues",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/Y02-scene-analyzer.md"
+    },
+    {
+      "id": "Y03",
+      "name": "prefab-inspector",
+      "collection": "unity",
+      "priority": "P2",
+      "description": "Validate prefab connections, overrides and missing assets",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/Y03-prefab-inspector.md"
+    },
+    {
+      "id": "Y04",
+      "name": "physics-debugger",
+      "collection": "unity",
+      "priority": "P2",
+      "description": "Detect suspicious collider/rigidbody layer configurations",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/Y04-physics-debugger.md"
+    },
+    {
+      "id": "Y05",
+      "name": "asset-import-optimizer",
+      "collection": "unity",
+      "priority": "P2",
+      "description": "Inspect asset import size/format and suggest targeted optimizations",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/Y05-asset-import-optimizer.md"
+    },
+    {
+      "id": "Y06",
+      "name": "performance-profiler",
+      "collection": "unity",
+      "priority": "P2",
+      "description": "Summarize measurable editor/player performance traces",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/Y06-performance-profiler.md"
+    },
+    {
+      "id": "Y07",
+      "name": "unity-test-runner",
+      "collection": "unity",
+      "priority": "P2",
+      "description": "Execute Unity Edit Mode/Play Mode tests reliably",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/Y07-unity-test-runner.md"
+    },
+    {
+      "id": "Y08",
+      "name": "build-validator",
+      "collection": "unity",
+      "priority": "P2",
+      "description": "Validate project build prerequisites and packaging",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/Y08-build-validator.md"
+    },
+    {
+      "id": "B01",
+      "name": "mesh-doctor",
+      "collection": "blender",
+      "priority": "P1",
+      "description": "Inspect mesh topology, normals and geometry defects",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/B01-mesh-doctor.md"
+    },
+    {
+      "id": "B02",
+      "name": "topology-analyzer",
+      "collection": "blender",
+      "priority": "P2",
+      "description": "Evaluate topology suitability for game assets",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/B02-topology-analyzer.md"
+    },
+    {
+      "id": "B03",
+      "name": "uv-inspector",
+      "collection": "blender",
+      "priority": "P2",
+      "description": "Audit UV presence, overlap and bounds",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/B03-uv-inspector.md"
+    },
+    {
+      "id": "B04",
+      "name": "material-auditor",
+      "collection": "blender",
+      "priority": "P2",
+      "description": "Detect missing textures, invalid nodes and export risks",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/B04-material-auditor.md"
+    },
+    {
+      "id": "B05",
+      "name": "rig-validator",
+      "collection": "blender",
+      "priority": "P1",
+      "description": "Verify armatures, weights and deform chains for game export",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/B05-rig-validator.md"
+    },
+    {
+      "id": "B06",
+      "name": "animation-checker",
+      "collection": "blender",
+      "priority": "P2",
+      "description": "Review action/NLA keyframe and rig compatibility",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/B06-animation-checker.md"
+    },
+    {
+      "id": "B07",
+      "name": "game-asset-optimizer",
+      "collection": "blender",
+      "priority": "P2",
+      "description": "Plan controlled poly/texture optimization and compare quality",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/B07-game-asset-optimizer.md"
+    },
+    {
+      "id": "B08",
+      "name": "batch-exporter",
+      "collection": "blender",
+      "priority": "P1",
+      "description": "Export multiple assets with consistent naming and validation",
+      "status": "specified_not_implemented",
+      "spec_path": "docs/skills/B08-batch-exporter.md"
+    }
+  ]
+}
